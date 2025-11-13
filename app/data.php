@@ -1,14 +1,17 @@
 <?php
+// app/data.php
 $usuarios_bbdd = [
 'usuario1@taskflow.com' => [
 'id' => 1,
-'nombre' => 'Enrique Moscoso',
+'nombre' => 'Oskar Calvo',
 'password' => 'pass123' 
 ],
 'usuario2@taskflow.com' => [
 'id' => 2,
-'nombre' => 'Pedro',
+'nombre' => 'Ana Alumna',
 'password' => 'admin'
 ]
 ];
+
+define('TAREAS_BBDD', $usuarios_bbdd);
 ?>
