@@ -1,27 +1,26 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once 'app/data.php';
-require_once 'app/controllers/AuthController.php';
+require_once __DIR__ . '/../app/data.php';
+require_once __DIR__ . '/../app/controllers/AuthController.php';
 class AuthTest extends TestCase
 {
 
 public function testLoginConCredencialesValidas()
 {
-global $usuarios_bbdd; 
 
 $resultado = handleLogin('usuario1@taskflow.com', 'pass123',
-$usuarios_bbdd);
+TAREAS_BBDD);
 
 $this->assertTrue($resultado);
 }
 
 public function testLoginConCredencialesInvalidas()
 {
-global $usuarios_bbdd;
+global TAREAS_BBDD;
 
 $resultado = handleLogin('usuario1@taskflow.com', 'pass_erroneo',
-$usuarios_bbdd);
+TAREAS_BBDD);
 
 $this->assertFalse($resultado);
 }
